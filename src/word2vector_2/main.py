@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os
+import os, time, json
 from re import match
 from tqdm import tqdm
 from argparse import ArgumentParser
@@ -28,5 +28,6 @@ for doc in tqdm(keep):
   for token in tokens:
     vocab.add(token)
 maps = {index:word for index, word in enumerate(vocab)}
-
-print(len(maps))
+# https://www.geeksforgeeks.org/get-current-timestamp-using-python/
+output = open(f"_output/{time.time()}.out", "w")
+output.write(json.dumps(maps))
