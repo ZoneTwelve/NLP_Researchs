@@ -161,3 +161,4 @@ cython_debug/
 
 # result output
 _output/*
+*.out
